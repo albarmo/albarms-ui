@@ -3,7 +3,7 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/albarmo"
   },
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "react components library by albarmo",
   "scripts": {
     "rollup": "rollup -c",
