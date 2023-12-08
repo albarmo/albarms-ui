@@ -1,5 +1,58 @@
 button {
-  font-size: 20px;
-  background: violet;
-  padding: '4px 2px'
+  font-size: 16px;
+  padding: 10px 18px;
+  border-radius: 10px;
+  border: none;
+  color: black;
 }
+
+.button-variant--filled {
+  border: none
+}
+
+.button-variant--link {
+  border: none;
+  background-color: transparent;
+  color: black
+}
+
+.button-variant--outline {
+  border: 1px solid black
+}
+
+.button-size--small {
+  font-size: 12px;
+  padding: 10px 16px;
+}
+
+.button-size--medium {
+  font-size: 14px;
+  padding: 11px 20px;
+}
+
+.button-size--large {
+  font-size: 16px;
+  padding: 12px 24px;
+}
+
+.button-radius--none {
+ border-radius: 0px;
+}
+
+.button-radius--small {
+  border-radius: 4px;
+}
+
+.button-radius--medium {
+  border-radius: 8px;
+}
+
+.button-radius--large {
+   border-radius: 16px;
+}
+
+.button-radius--full {
+   border-radius: 999em;
+}
+
+
