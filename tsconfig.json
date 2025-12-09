@@ -1,18 +1,35 @@
 {
-    "compilerOptions": {
-        "target": "es5",
-        "esModuleInterop": true,
-        "forceConsistentCasingInFileNames": true,
-        "strict": true,
-        "skipLibCheck": true,
-        "jsx": "react",
-        "module": "ESNext",
-        "declaration": true,
-        "declarationDir": "types",
-        "sourceMap": true,
-        "outDir": "dist",
-        "moduleResolution": "node",
-        "allowSyntheticDefaultImports": true,
-        "emitDeclarationOnly": true
-    }
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+
+    "baseUrl": ".",
+    "paths": {
+      "@atoms/*": ["src/atoms/*"],
+      "@molecules/*": ["src/molecules/*"],
+      "@organisms/*": ["src/organisms/*"],
+      "@primitives/*": ["src/primitives/*"],
+      "@tokens/*": ["src/tokens/*"],
+      "@utils/*": ["src/utils/*"],
+      "@styles/*": ["src/styles/*"],
+      "@hooks/*": ["src/hooks/*"],
+      "@/*": ["src/*"]
+    },
+
+    "jsx": "react-jsx",
+    "strict": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+
+    "declaration": true,
+    "declarationDir": "dist/types",
+    "sourceMap": true,
+    "outDir": "dist",
+
+    "ignoreDeprecations": "6.0"
+  },
+  "include": ["src", "src/types"],
+  "exclude": ["dist", "node_modules"]
 }

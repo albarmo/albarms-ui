@@ -3,13 +3,14 @@ import commonjs from "@rollup/plugin-commonjs";
 import typescript from "@rollup/plugin-typescript";
 import dts from "rollup-plugin-dts";
 
-import packageJson from "./package.json" assert {type: "json"};
+import packageJson from "./package.json" assert { type: "json" };
 import postcss from "rollup-plugin-postcss";
 
 import terser from "@rollup/plugin-terser";
-import peerDepsExternal from 'rollup-plugin-peer-deps-external';
+import peerDepsExternal from "rollup-plugin-peer-deps-external";
 
 export default [
+    // ---------- JS / ESM / CJS BUILD ----------
     {
         input: "src/index.ts",
         output: [
@@ -26,21 +27,36 @@ export default [
         ],
         plugins: [
             peerDepsExternal(),
+
             resolve(),
+
             commonjs(),
+
+            postcss({
+                extract: true,
+                modules: false,
+                minimize: true,
+            }),
+
             typescript({
-                tsconfig: './tsconfig.json',
-                declaration: true,
-                declarationDir: 'dist',
-            } ),
-            postcss(),
-            terser()
+                tsconfig: "./tsconfig.json",
+                declaration: false, // ⛔ DO NOT emit here
+                noEmit: false,
+            }),
+
+            terser(),
         ],
     },
+
+    // ---------- TYPE DECLARATION BUILD ----------
     {
-        input: "dist/esm/index.d.ts",
-        output: [{file: "dist/index.d.ts", format: "esm"}],
-        plugins: [dts()],
-        external: [/\.css$/]
+        input: "src/index.ts",
+        output: [{ file: "dist/index.d.ts", format: "esm" }],
+        plugins: [
+            dts({
+                respectExternal: true,
+            }),
+        ],
+        external: [/\.css$/, /\.scss$/],
     },
 ];
