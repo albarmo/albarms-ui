@@ -130,7 +130,3 @@ npm publish
 
 **Albar Moerhamsa**
 Crafting UI with precision, vibes, and a sprinkle of chaos.
-
----
-
-Kalau mau aku bikinin versi README yang lebih aesthetic, lengkap dengan badges, emoji, atau demo GIF, tinggal bilang aja — kita gaspol. 🚀✨
